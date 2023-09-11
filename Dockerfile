@@ -1,35 +1,17 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get install -y \
-    curl \
-    git \
-    python3 \
-    python3-pip \
-    xvfb \
-    jq \
-    chromium-browser \
-    chromium-chromedriver \
-    firefox \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libatk1.0-0 \
-    libatspi2.0-0 \
-    libcups2 \
-    libdbus-1-3 \
-    libgbm1 \
-    libgtk-3-0 \
-    libnspr4 \
-    libnss3 \
-    libxcomposite1 \
-    libxkbcommon0 \
-    libxrandr2 \
-    xdg-utils \
-    ntpdate \
-    openssl
+FROM ruby:3.0.2-alpine
 
-RUN pip3 install --upgrade pip
-WORKDIR /app
-COPY ./requirements.txt /app
-RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox --linkpath AUTO
-ENV DISPLAY=:99
-CMD ["Xvfb", ":99", "-ac"]
+RUN apk update && \
+    apk add build-base && \
+    apk add g++ gcc unixodbc-dev unixodbc freetds-dev freetds && \
+    apk add chromium chromium-chromedriver gcompat
+
+RUN apk update &&\
+    apk add --update alpine-sdk \
+               build-base
+
+RUN mkdir cucumber
+WORKDIR /cucumber
+COPY Gemfile .
+
+RUN gem install bundler --source http://rubygems.org &&\
+    bundle install
