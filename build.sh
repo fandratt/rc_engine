@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t rf_engine -f Dockerfile .
+docker build -t rc_engine -f Dockerfile .

@@ -1,4 +1,4 @@
-# Robot Framework
+# Ruby Cucumber
 
 This automation requires you to install Docker. Kindly install based on your OS:
 `https://www.docker.com/products/docker-desktop`
@@ -7,26 +7,25 @@ This automation requires you to install Docker. Kindly install based on your OS:
 
 Run in your terminal `build.sh` to create the docker image. Make sure you have stable internet connection as it will download the required dependencies.
 
-## Run Robot
+## Run Ruby Cucumber
 
 ### Traditional Way
 
-> Run Specific Robot File
-
 ```sh
-robot -d Results /path/path/file.robot
+cucumber -f pretty -f html -o report.html
 ```
 
-> Run Robot Specific Tags
+> Run a Specific tag(s)
 
 ```sh
-robot -d Results --include tagName /path/path/folder/
+cucumber --tags @ready -f pretty -f html -o report.html
+cucumber --tags @ready @sprint1 -f pretty -f html -o report.html
 ```
 
-> Run Specific Test Case from a Test Suite
+> Run using the Docker Image
 
 ```sh
-robot -d Results -t "test case name here" /path/path/file.robot
+docker run -v ${PWD}:/cucumber rc_engine cucumber --tags @this -f pretty -f html -o report.html -f rerun --out rerun.txt /cucumber/features
 ```
 
 ## Docker Hub
