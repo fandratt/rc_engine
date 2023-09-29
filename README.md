@@ -31,4 +31,4 @@ docker run -v ${PWD}:/cucumber rc_engine cucumber --tags @this -f pretty -f html
 ## Docker Hub
 
 This automation requires you to install Docker. Kindly install based on your OS:
-`https://hub.docker.com/repository/docker/fandratt/rubycucumber`
+`https://hub.docker.com/r/fandratt/rubycucumber`
