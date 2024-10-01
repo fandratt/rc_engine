@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.2.2'
+# ruby '3.0.2'
 
 gem 'capybara', '= 3.39.2'
 gem 'cucumber', '= 8.0.0'
