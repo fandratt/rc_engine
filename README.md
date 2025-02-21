@@ -28,6 +28,12 @@ cucumber --tags @ready @sprint1 -f pretty -f html -o report.html
 docker run -v ${PWD}:/cucumber rc_engine cucumber --tags @this -f pretty -f html -o report.html -f rerun --out rerun.txt /cucumber/features
 ```
 
+## Instal ImageMagick
+
+```sh
+brew install imagemagick
+```
+
 ## Docker Hub
 
 This automation requires you to install Docker. Kindly install based on your OS:
