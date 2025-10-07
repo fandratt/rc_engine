@@ -4,7 +4,7 @@ ruby '3.2.2'
 
 gem 'capybara', '= 3.39.2'
 gem 'cucumber', '= 8.0.0'
-gem 'selenium-webdriver', '~> 4.11.0'
+gem 'selenium-webdriver', '~> 4.21.0'
 gem 'geckodriver-helper', '~> 0.0.5'
 gem 'site_prism', '= 4.0.3'
 gem 'rspec', '= 3.12.0'
