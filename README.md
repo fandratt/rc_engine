@@ -25,7 +25,7 @@ cucumber --tags @ready @sprint1 -f pretty -f html -o report.html
 > Run using the Docker Image
 
 ```sh
-docker run -v ${PWD}:/cucumber rc_engine cucumber --tags @this -f pretty -f html -o report.html -f rerun --out rerun.txt /cucumber/features
+docker run -v ${PWD}:/myapp rc_engine cucumber --tags @this -f pretty -f html -o report.html -f rerun --out rerun.txt /myapp/features
 ```
 
 ## Instal ImageMagick

@@ -9,8 +9,8 @@ RUN apk update &&\
     apk add --update alpine-sdk \
                build-base
 
-RUN mkdir cucumber
-WORKDIR /cucumber
+RUN mkdir myapp
+WORKDIR /myapp
 COPY Gemfile .
 
 RUN gem install bundler --source http://rubygems.org &&\
